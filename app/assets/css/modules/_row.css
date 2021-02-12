@@ -2,13 +2,21 @@
   @mixin clearFix;
   
   &--gutters {
-    padding-right: -65px;
+    margin-right: -65px;
+  }
+
+  &--gutters-large {
+    margin-right: 100px;
   }
 
   &--gutters > div {
     padding-right: 65px;
   }
 
+  &--gutters-large > div {
+    padding-right: 100px;
+  }
+  
   &__sm-mb {
     margin-bottom: 1rem;
   }
@@ -27,6 +35,11 @@
       width: 37%;
     }
 
+    &__md-6 {
+      float: left;
+      width: 50%;
+    }
+
     &__md-8 {
       float: left;
       width: 66.6666%;
@@ -36,6 +49,4 @@
       width: 63%;
     }
   }
-
-
 }
