@@ -4,12 +4,31 @@
   max-width: 1236px;
   margin-left: auto;
   margin-right: auto;
-  overflow: auto;
+  overflow: hidden;
 
   &--medium {
     max-width: 976px;
   }
 
+  &--no-padding-till-md {
+    padding-left: 0;
+    padding-right: 0;
+
+    @mixin atMedium {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
+
+  &--no-padding-till-lg {
+    padding-left: 0;
+    padding-right: 0;
+
+    @mixin atLarge {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
   .wrapper {
     padding-left: 0;
     padding-right: 0;
