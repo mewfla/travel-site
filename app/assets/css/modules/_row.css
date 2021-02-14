@@ -1,30 +1,7 @@
 .row {
-  @mixin clearFix;
   
   &--pt {
     padding-top: 80px;
-  }
-  &--gutters {
-    margin-right: -65px;
-  }
-
-  &--gutters-small {
-    margin-right: -450x;
-  }
-  &--gutters-large {
-    margin-right: 100px;
-  }
-
-  &--gutters > div {
-    padding-right: 65px;
-  }
-
-  &--gutters-large > div {
-    padding-right: 100px;
-  }
-  
-  &--gutters-small > div {
-    padding-right: 45px;
   }
 
   &__sm-mb {
@@ -32,61 +9,82 @@
   }
 
   @mixin atMedium {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
 
-    &__sm-lg {
-      margin-bottom: 0;
+    &--gutters {
+      column-gap: 5.3%;
     }
-    &__lg-4 {
-      float: left;
-      width: 33.3333%;
+    &--gutters-small {
+      column-gap: 3.6%;
     }
-
-    &__lg-4--larger {
-      width: 37%;
+    &--gutters-lg {
+      margin-right: 8%;
     }
-
-    &__lg-6 {
-      float: left;
-      width: 50%;
-    }
-
-    &__lg-8 {
-      float: left;
-      width: 66.6666%;
-    }
-
-    &__lg-8--smaller{
-      width: 63%;
-    }
-  }
-
-  @mixin atLarge {
-
+  
     &__sm-mb {
       margin-bottom: 0;
     }
+
+    &__lg-1,
+    &__lg-2,
+    &__lg-3,
+    &__lg-4,
+    &__lg-5,
+    &__lg-6,
+    &__lg-7,
+    &__lg-8,
+    &__lg-9,
+    &__lg-10,
+    &__lg-11,
+    &__lg-12 {
+      grid-column: span 12;
+    }
+
     &__md-4 {
-      float: left;
-      width: 33.3333%;
+      grid-column: span 4;
     }
 
-    &__md-4--larger {
-      width: 37%;
-    }
-
-    &__md-6 {
-      float: left;
-      width: 50%;
+    &__med-6 {
+      grid-column: span 6;
     }
 
     &__md-8 {
-      float: left;
-      width: 66.6666%;
+      grid-column: span 8;
+    }
+    &__md-4 {
+      grid-column: span 4;
     }
 
-    &__md-8--smaller{
-      width: 63%;
+    &__md-6 {
+      grid-column: span 6;
     }
+
+    &__md-8 {
+      grid-column: span 8;
+    }
+
+    
+  }
+
+  @mixin atlg {
+
+    &__b-margin-until-lg {
+      margin-bottom: 0;
+    }
+
+    &__lg-4 {
+      grid-column: span 4;
+    }
+
+    &__lg-6 {
+      grid-column: span 6;
+    }
+
+    &__lg-8 {
+      grid-column: span 8;
+    }
+
   }
 
   /* Equal Height rules*/
@@ -101,14 +99,12 @@
     }
   }
 
-  &--equal-height-lg {
-    @mixin atLarge {
-      display: flex;
-    }
 
-    & > div {
-      float: none;
-      display: flex;
+  &--equal-height-lg {
+    @mixin atlg {
+      & > div {
+        display: flex;
+      }
     }
   }
 }
