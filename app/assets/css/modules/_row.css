@@ -67,7 +67,7 @@
     
   }
 
-  @mixin atlg {
+  @mixin atLarge {
 
     &__b-margin-until-lg {
       margin-bottom: 0;
@@ -101,7 +101,7 @@
 
 
   &--equal-height-lg {
-    @mixin atlg {
+    @mixin atLarge {
       & > div {
         display: flex;
       }
